@@ -1,0 +1,72 @@
+#main{font-family: Georgia, 'Times New Roman', Times, serif;}
+
+.PCLOGO{
+    border-radius: 10px;
+}
+
+.contact-title{color: #053069; 
+display: flex;
+text-align: left;
+font-weight: bold;
+}
+
+.p-contact{text-align: justify;}
+
+.deets{ color: #053096;
+font-weight: bold;}
+
+.navbar{
+    background-color: #053069 !important;
+    
+}
+
+.deets{color: #053069;}
+
+.PCLOGO{
+    margin-left: 1%;
+    margin-right: 25%;
+    margin-top: 6px;
+    margin-bottom: 6px; 
+
+}
+
+.navbar-brand:hover{
+    color: rgba(253, 244, 244, 0.9);
+    cursor: default;
+}
+
+
+.nav-link{
+    color: rgb(253, 244, 236);
+    font-size: 14pt;
+    font-family: "Tinos", serif;
+}
+
+.nav-link:hover{
+    font-size: 15pt;
+    color: rgb(253, 244, 236);
+    font-weight: bold;
+}
+
+main {
+  padding: 110px 20px 20px 20px  /* Adjust based on your navbar height */
+}
+
+.message{color: #053069;}
+
+.loading,
+.error-message,
+.sent-message {
+  display: none;  /* start hidden; shown dynamically via JS */
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.submit{background-color: #053069;
+border-radius: 7px;
+color: beige;
+height: 40px;
+border: #053069;}
