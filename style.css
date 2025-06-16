@@ -12,7 +12,7 @@ font-weight: bold;
 
 .p-contact{text-align: justify;}
 
-.deets{ color: #053096;
+.deets{ color: #053069;
 font-weight: bold;}
 
 .navbar{
@@ -20,7 +20,6 @@ font-weight: bold;}
     
 }
 
-.deets{color: #053069;}
 
 .PCLOGO{
     margin-left: 1%;
@@ -70,3 +69,19 @@ border-radius: 7px;
 color: beige;
 height: 40px;
 border: #053069;}
+
+.footer, .footer span, .footer a, .footer svg, .footer li {
+  background-color: #053069;
+  color: beige !important;  /* force it */
+  fill: beige !important;   /* for SVGs */
+
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer {
+  padding-right: 20px;  /* or more, try 30px if you like more space */
+}
+
