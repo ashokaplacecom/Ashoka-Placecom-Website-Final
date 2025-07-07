@@ -67,3 +67,305 @@ body {
     color: #333;
   }
   
+
+
+
+  #main{font-family: Georgia, 'Times New Roman', Times, serif;}
+
+.PCLOGO{
+    border-radius: 10px;
+}
+
+.contact-title{color: #053069; 
+display: flex;
+text-align: left;
+font-weight: bold;
+}
+
+.p-contact{text-align: justify;}
+
+.deets{ color: #053069;
+font-weight: bold;}
+
+.navbar{
+    background-color: #053069 !important;
+    
+}
+
+
+.PCLOGO{
+    margin-left: 1%;
+    margin-right: 25%;
+    margin-top: 6px;
+    margin-bottom: 6px; 
+
+}
+
+.navbar-brand:hover{
+    color: rgba(253, 244, 244, 0.9);
+    cursor: default;
+}
+
+
+.nav-link{
+    color: rgb(253, 244, 236);
+    font-size: 14pt;
+    font-family: "Tinos", serif;
+}
+
+.nav-link:hover{
+    font-size: 15pt;
+    color: rgb(253, 244, 236);
+    font-weight: bold;
+}
+
+main {
+  padding: 110px 20px 20px 20px  /* Adjust based on your navbar height */
+}
+
+.message{color: #053069;}
+
+.loading,
+.error-message,
+.sent-message {
+  display: none;  /* start hidden; shown dynamically via JS */
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.submit{background-color: #053069;
+border-radius: 7px;
+color: beige;
+height: 40px;
+border: #053069;}
+
+.footer, .footer span, .footer a, .footer svg, .footer li {
+  background-color: #053069;
+  color: beige !important;  /* force it */
+  fill: beige !important;   /* for SVGs */
+
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer {
+  padding-right: 20px;  /* or more, try 30px if you like more space */
+}
+
+
+
+body{
+    background-color: rgb(253, 244, 236);
+}
+
+.navbar{
+    background-color: #053069 !important;
+}
+
+.PCLOGO{
+    margin-left: 1%;
+    margin-right: 25%;
+    margin-top: 6px;
+    margin-bottom: 6px; 
+    border-radius: 7px;
+
+}
+
+.navbar-brand:hover{
+    color: rgba(253, 244, 244, 0.9);
+    cursor: default;
+}
+
+.nav-link{
+    color: rgb(253, 244, 236);
+    font-size: 14pt;
+    font-family: "Tinos", serif;
+}
+
+.nav-link:hover{
+    font-size: 14pt;
+    color: rgb(253, 244, 236);
+    font-weight: bold;
+}
+
+.nav-link:visited{
+    color: rgb(253, 244, 235);
+    font-size: 14pt;
+    font-family: "Tinos", serif;
+}
+
+
+/* picture */
+
+.flex-container.pic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding-top: 150px;
+}
+
+
+.card.a1{
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(253, 244, 236);
+}
+
+
+.card > img{
+    border: none;
+    border-radius: 10px;
+}
+
+.card-text{
+    font-family: "Tinos", serif;
+    font-size: 21pt;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #053069;
+    padding-top: 20px;
+}
+
+/* about us */
+
+
+.flex-container.logo-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ 
+}
+
+.logo-info > img{
+    width: 36rem;
+    height: 12rem;
+    margin-top: 100px;
+    position: relative;
+    top: 100px;
+    margin-bottom: 100px;
+}
+
+
+
+.abt-us{
+    color: #053069;
+    border: 3px solid #053069;
+    background-color: rgb(253, 244, 236);
+    margin-top: 100px;
+}
+
+.abt-us:hover{
+    position: relative;
+    bottom: 4px;
+    box-shadow: 0px 6px rgb(208, 201, 195);
+}
+
+.abt-us > .card-body > .card-title{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 22pt;
+    color: #053069;
+}
+
+.abt-us > .card-body > .card-text{
+    font-family: "Tinos", serif;
+    font-size: 18pt;
+    text-align: left;
+}
+
+
+
+
+
+
+.flex-container.b2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding-top: 50px;
+}
+
+.b2 > .card{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: rgb(253, 244, 236);
+    border: 3px solid #053069;
+    padding-top: 40px;
+}
+
+
+.T01{
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 28pt;
+    color: #053069;
+    text-shadow: 1.25px 1.25px grey;
+    letter-spacing: 5px;
+}
+
+
+.ca1:hover{
+    box-shadow: -9px 9px rgb(208, 201, 195);
+    position: relative;
+    left: 4px;
+}
+
+.ca2:hover{
+    box-shadow: 0px 9px rgb(208, 201, 195);
+    position: relative;
+    bottom: 4px;
+}
+.ca3:hover{
+    box-shadow: 9px 9px rgb(208, 201, 195);
+    position: relative;
+    right: 4px;
+}
+
+.b2 .card-img-top{
+    width: 140px;
+    padding-top: 10px;
+}
+
+
+.XY1{
+    display: flex;
+   justify-content: center;
+}
+
+.ca1 .card-body{
+    position: relative;
+    bottom: 28px;
+}
+
+.ca3 .card-body{
+    position: relative;
+    bottom: 28px;
+}
+
+.ca1 .XY1{
+    position: relative;
+    bottom: 20px;
+}
+
+.ca3 img{
+  position: relative;
+  bottom: 10px;
+}
+
+
+@media (max-width: 831px){
+    .ca1 .card-text{
+   padding-bottom: 18px;
+}
+}
+
+
