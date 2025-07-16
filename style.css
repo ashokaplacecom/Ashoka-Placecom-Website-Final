@@ -26,12 +26,15 @@ body {
     color: rgb(253, 244, 236) !important;
   }
   
-  .section-title {
+  .contact-title {
     font-family: "Tinos", serif;
     color: #053069;
     font-size: 28px;
     font-weight: bold;
   }
+ .p-contact{
+    text-align: left;
+ }
   
   .title-underline {
     width: 60px;
