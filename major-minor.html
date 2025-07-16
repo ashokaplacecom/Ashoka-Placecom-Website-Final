@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://n-76jgcy7botkuqu5nuct2f2o5qfbig53zviow3tq-0lu-script.googleusercontent.com/userCodeAppPanel -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./jsapi"></script><script>window.parent.maeExportApis_();</script>
+
+
+    <!--<base target="_top">--><base href="." target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css2" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --primary-dark: #3f37c9;
+            --success: #4cc9f0;
+            --accent: #f72585;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;  
+            justify-content: center;
+            padding: 10px;
+            position: relative;
+            overflow-y:scroll;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+        
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 700px;
+            margin-top: -30px;  
+        }
+        
+        .card {
+            background-color: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 25px 25px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+        }
+        
+         
+        
+        h1 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        
+        input[type="email"], input[type="text"], select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background-color: var(--bg-light);
+        }
+        
+        input[type="email"]:focus, input[type="text"]:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+            outline: none;
+        }
+        
+        button {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            background: linear-gradient(90deg, #c4c4c4, #a0a0a0);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        #message {
+            padding: 10px;
+            margin: 12px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 13px;
+        }
+        
+        .success {
+            background-color: rgba(76, 201, 240, 0.15);
+            color: #0077b6;
+            border-left: 4px solid #0077b6;
+        }
+        
+        .error {
+            background-color: rgba(247, 37, 133, 0.15);
+            color: #f72585;
+            border-left: 4px solid #f72585;
+        }
+        
+        .info {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            border-radius: 8px;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        .otp-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .otp-input {
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        .resend-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .resend-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--white);
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+         
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .form-column {
+            flex: 1 0 50%;
+            padding: 0 10px;
+        }
+        
+        .form-column-header {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+         
+        @media (max-width: 768px) {
+            .form-column {
+                flex: 1 0 100%;
+                margin-bottom: 8px;
+            }
+            
+            .card {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            input[type="email"], input[type="text"], select, button {
+                padding: 8px 12px;
+            }
+            
+            .container {
+                max-width: 500px;
+            }
+        }
+        
+         
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+         
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+    <script>
+        var currentEmail = "";
+        
+        
+        function showStep(stepId) {
+            
+            var steps = document.getElementsByClassName('step');
+            for (var i = 0; i < steps.length; i++) {
+                steps[i].classList.remove('active');
+            }
+            
+            
+            document.getElementById(stepId).classList.add('active');
+        }
+        
+        function requestOTP() {
+            var email = document.getElementById("email").value;
+            
+            
+            if (!email || !email.includes('@ashoka.edu.in')) {
+                showMessage("Please enter a valid Ashoka University email address", "error");
+                return;
+            }
+            
+            currentEmail = email;
+            
+            
+            document.getElementById("otpBtn").disabled = true;
+            document.getElementById("otpBtn").innerHTML = "Sending OTP...";
+            
+            google.script.run
+                .withSuccessHandler(function(response) {
+                    if (response.success) {
+                        showStep('otpStep');
+                        showMessage("OTP sent to your email", "success");
+                        
+                        document.getElementById("otp").classList.add("pulse");
+                        setTimeout(function() {
+                            document.getElementById("otp").classList.remove("pulse");
+                        }, 3000);
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                    document.getElementById("otpBtn").disabled = false;
+                    document.getElementById("otpBtn").innerHTML = "Send OTP";
+                })
+                .withFailureHandler(function(error) {
+                    showMessage("Error: " + error, "error");
+                    document.getElementById("otpBtn").disabled = false;
+                    document.getElementById("otpBtn").innerHTML = "Send OTP";
+                })
+                .generateAndSendOTP(email);
+        }
+        
+        function verifyOTP() {
+            var otp = document.getElementById("otp").value;
+            
+            
+            if (!otp || otp.length !== 4 || isNaN(otp)) {
+                showMessage("Please enter a valid 4-digit OTP", "error");
+                return;
+            }
+            
+            
+            document.getElementById("verifyBtn").disabled = true;
+            document.getElementById("verifyBtn").innerHTML = "Verifying...";
+            
+            google.script.run
+                .withSuccessHandler(function(response) {
+                    if (response.success) {
+                        showMessage(response.message, "success");
+                        showStep('requestStep');
+                        document.getElementById("requestEmail").value = currentEmail;
+                        document.getElementById("requestEmail").readOnly = true;
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                    document.getElementById("verifyBtn").disabled = false;
+                    document.getElementById("verifyBtn").innerHTML = "Verify OTP";
+                })
+                .withFailureHandler(function(error) {
+                    showMessage("Error: " + error, "error");
+                    document.getElementById("verifyBtn").disabled = false;
+                    document.getElementById("verifyBtn").innerHTML = "Verify OTP";
+                })
+                .verifyOTP(currentEmail, otp);
+        }
+        
+        function submitRequest() {
+            var data = {
+                email: document.getElementById("requestEmail").value,
+                collegeId: document.getElementById("collegeId").value,
+                currentMajor: document.getElementById("currentMajor").value,
+                prospectiveMajor: document.getElementById("prospectiveMajor").value,
+                currentMinor: document.getElementById("currentMinor").value,
+                prospectiveMinor: document.getElementById("prospectiveMinor").value
+            };
+            
+            
+            if (!data.collegeId) {
+                showMessage("Please enter your College ID", "error");
+                return;
+            }
+            
+            
+            document.getElementById("submitBtn").disabled = true;
+            document.getElementById("submitBtn").innerHTML = "Submitting...";
+            
+            google.script.run
+                .withSuccessHandler(function(response) {
+                    if (response.success) {
+                        
+                        var successStep = document.createElement('div');
+                        successStep.id = 'successStep';
+                        successStep.className = 'step active';
+                        
+                        
+                        var successContent = `
+                            <div style="text-align: center; margin: 20px 0;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="40" cy="40" r="40" fill="#4CC9F0" fill-opacity="0.2"/>
+                                    <path d="M24 40L36 52L56 32" stroke="#4CC9F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h2 style="color: var(--text-dark); margin: 20px 0;">Request Submitted Successfully!</h2>
+                                <p style="color: var(--text-light); margin-bottom: 20px;">Your major/minor change request has been submitted. You will be notified once it's processed.</p>
+                                <div class="info">
+                                    <p>Thank you for your submission. The academic office will review your request and get back to you via email.</p>
+                                </div>
+                            </div>
+                        `;
+                        
+                        successStep.innerHTML = successContent;
+                        
+                        // Replace all steps with success step
+                        var cardElement = document.querySelector('.card');
+                        var messageElement = document.getElementById('message');
+                        var logoElement = document.querySelector('.logo');
+                        var titleElement = document.querySelector('h1');
+                        
+                        // Clear the card except for logo and title
+                        var steps = document.getElementsByClassName('step');
+                        while(steps.length > 0) {
+                            steps[0].parentNode.removeChild(steps[0]);
+                        }
+                        
+                        // Add success step after the message element
+                        cardElement.insertBefore(successStep, messageElement.nextSibling);
+                        
+                        // Show a temporary success message
+                        showMessage(response.message, "success");
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                    document.getElementById("submitBtn").disabled = false;
+                    document.getElementById("submitBtn").innerHTML = "Submit Request";
+                })
+                .withFailureHandler(function(error) {
+                    showMessage("Error: " + error, "error");
+                    document.getElementById("submitBtn").disabled = false;
+                    document.getElementById("submitBtn").innerHTML = "Submit Request";
+                })
+                .submitChangeRequest(data);
+        }
+        
+        function resendOTP() {
+            document.getElementById("resendLink").innerHTML = "Sending...";
+            
+            google.script.run
+                .withSuccessHandler(function(response) {
+                    if (response.success) {
+                        showMessage("OTP resent to your email", "success");
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                    document.getElementById("resendLink").innerHTML = "Resend OTP";
+                })
+                .withFailureHandler(function(error) {
+                    showMessage("Error: " + error, "error");
+                    document.getElementById("resendLink").innerHTML = "Resend OTP";
+                })
+                .generateAndSendOTP(currentEmail);
+        }
+        
+        function showMessage(message, type) {
+            var msgDiv = document.getElementById("message");
+            msgDiv.innerHTML = message;
+            msgDiv.className = type;
+            
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                msgDiv.innerHTML = "";
+                msgDiv.className = "";
+            }, 5000);
+        }
+        
+        // Allow pressing Enter key to submit
+        function checkEnterEmail(e) {
+            if (e.key === "Enter") {
+                requestOTP();
+            }
+        }
+        
+        function checkEnterOTP(e) {
+            if (e.key === "Enter") {
+                verifyOTP();
+            }
+        }
+        
+        // Initialize to show email step
+        document.addEventListener('DOMContentLoaded', function() {
+            showStep('emailStep');
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            
+            <h1>Major/Minor Change Request</h1>
+            <div id="message"></div>
+            
+            <div id="emailStep" class="step active">
+                <div class="form-group">
+                    <label for="email">Enter Your Ashoka Email</label>
+                    <input type="email" id="email" placeholder="your.name@ashoka.edu.in" onkeypress="checkEnterEmail(event)">
+                    <button id="otpBtn" onclick="requestOTP()">Send OTP</button>
+                </div>
+                <div class="info">
+                    <p>Enter your Ashoka University email address to receive a one-time verification code. This code will be used to verify your identity.</p>
+                </div>
+            </div>
+            
+            
+            <div id="otpStep" class="step">
+                <div class="form-group">
+                    <label for="otp">Enter 4-digit OTP sent to your email</label>
+                    <input type="text" id="otp" class="otp-input" placeholder="Enter 4-digit code" maxlength="4" onkeypress="checkEnterOTP(event)">
+                    <button id="verifyBtn" onclick="verifyOTP()">Verify OTP</button>
+                    <a class="resend-link" id="resendLink" onclick="resendOTP()">Didn't receive the code? Resend OTP</a>
+                </div>
+                <div class="info">
+                    <p>Enter the 4-digit verification code sent to your email. If you don't see it, check your spam folder or request a new code.</p>
+                </div>
+            </div>
+            
+            
+            <div id="requestStep" class="step">
+                <div class="form-group">
+                    <label for="collegeId">Ashoka Id</label>
+                    <input type="text" id="collegeId" placeholder="For eg. 10202XXXXX">
+                </div>
+                
+                <div class="form-row">
+                    
+                    <div class="form-column">
+                        <div class="form-column-header">Current Information</div>
+                        <div class="form-group">
+                            <label for="currentMajor">Current Major</label>
+                            <input type="text" id="currentMajor" placeholder="Enter your current major">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentMinor">Current Minor</label>
+                            <input type="text" id="currentMinor" placeholder="Enter your current minor">
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-column">
+                        <div class="form-column-header">Prospective Information</div>
+                        <div class="form-group">
+                            <label for="prospectiveMajor">Prospective Major</label>
+                            <input type="text" id="prospectiveMajor" placeholder="Enter your prospective major">
+                        </div>
+                        <div class="form-group">
+                            <label for="prospectiveMinor">Prospective Minor</label>
+                            <input type="text" id="prospectiveMinor" placeholder="Enter your prospective minor">
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="submitBtn" onclick="submitRequest()">Submit Request</button>
+                <div class="info">
+                    <p>Please fill in all the relevant fields. Leave a field blank if it doesn't apply to your change request.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            © 2025 Ashoka University PlaceCom Team. All rights reserved.
+        </div>
+    </div>
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
